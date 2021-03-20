@@ -33,7 +33,6 @@ class AboutAssociationController extends Controller
         'managerWord'          => 'required',
         'vison'                => 'required',
         'message'              => 'required',
-       'associationIcon'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2028',
        'visonIcon'             => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2028',
        'messageIcon'           => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2028',
        'messageImage'          => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14000',
@@ -56,23 +55,7 @@ class AboutAssociationController extends Controller
          $AboutAssociation->showInHome =1;
     }
 
-    // // create project instance
-    //Store association Icon
-    if($request->file('associationIcon')){
-
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('associationIcon')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
-
-        $uploads_folder =  getcwd() .'/uploads/aboutassoiation/';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('associationIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
-        $AboutAssociation->associationIcon=$image_full_name;
-    }
+   
     //store vison icon
     if($request->file('visonIcon')){
 
@@ -85,9 +68,9 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('visonIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
-        $AboutAssociation->visonIcon=$image_full_name;
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
+        $AboutAssociation->visonIcon='uploads/aboutassoiation/'.$image_full_name;
     }
     //Store message Icon
     if($request->file('messageIcon')){
@@ -101,9 +84,9 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('messageIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
-        $AboutAssociation->messageIcon=$image_full_name;
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
+        $AboutAssociation->messageIcon='uploads/aboutassoiation/'.$image_full_name;
     }
     //store image vison
     if($request->file('visonImage')){
@@ -210,12 +193,12 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('visonIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
         \DB::table('about_associations')
         ->where('associationId',$id)
         ->update([
-          'visonIcon'=>$image_full_name,
+          'visonIcon'=>'uploads/aboutassoiation/'.$image_full_name,
         ]);
     }
     //update message Icon
@@ -230,33 +213,15 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('messageIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
         \DB::table('about_associations')
         ->where('associationId',$id)
         ->update([
-          'messageIcon'=>$image_full_name,
+          'messageIcon'=>'uploads/aboutassoiation/'.$image_full_name,
         ]);
     }
-    if($request->file('associationIcon')){
-      \Storage::delete(AboutAssociation::find($id)->associationIcon);
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('associationIcon')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
 
-        $uploads_folder =  getcwd() .'/uploads/aboutassoiation';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('associationIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
-        \DB::table('about_associations')
-        ->where('associationId',$id)
-        ->update([
-          'associationIcon'=>$image_full_name,
-        ]);
-    }
     //store image vison
     if($request->file('visonImage')){
 

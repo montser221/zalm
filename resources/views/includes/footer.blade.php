@@ -10,8 +10,8 @@ $about = \DB::table('about_associations')
     <div class="row">
       <div class="col-sm-3">
         <p class="about">
-          تهدف جمعية البر الخيرية بمحافظة
-المويه إلى تقديم الخدمات التي
+          تهدف جمعية البر الخيرية 
+بظلم إلى تقديم الخدمات التي
 تحتاجها المحافظة والمراكز التابعة له
         </p>
         <div class="social">
@@ -26,7 +26,7 @@ $about = \DB::table('about_associations')
         <div class="contact-info fix-footer"> معلومات التواصل</div>
         <ul class="list-unstyled">
 
-          <li ><a href="tel:+055 283-1282" dir="ltr">الهاتف:  {{$data->phoneNumber ?? ''}}</a></li>
+          <li ><a href="tel:+055 283-1282" dir="ltr">الجوال:  {{$data->phoneNumber ?? ''}}</a></li>
           <li class="d-block">العنوان: {{$data->foundationTitle ?? ''}}  </li>
         </ul>
         <div class="pay-by">
@@ -80,7 +80,8 @@ $about = \DB::table('about_associations')
     <hr style="border-bottom:2px solid #DDD"/>
     <div class="copyright">
       <div class="footer-left">
-          جميع الحقوق محفوظة لدى جمعية البر الخيرية بمحافظة الموية  تصميم نوافذ الابداع
+        الحقوق محفوظة لدى جمعية  ظلم الخيرية
+
        </div>
 
       <div class="footer-right">

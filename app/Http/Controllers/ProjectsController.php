@@ -23,12 +23,6 @@ class ProjectsController extends Controller
 
       public function customProjectDetail()
     {
-
-      // $customProject =  \DB::table('projects')
-      // ->whereIn('projectId',[10002, 10103])
-      // ->where('projectId', 10002)
-      // ->get();
-
       $customProject = Projects::orderBy('projectId','desc')->whereIn('projectId',[2,3])->get();
       // ->where('projectId',10103)->where('projectId',10002);
       return view('pages.customProject')
@@ -48,11 +42,9 @@ class ProjectsController extends Controller
       $request->validate([
        
           'projectName'        => 'required|unique:projects|max:255',
-        //   'projectCategoryId'  => 'required|numeric',
           'projectDesc'        => 'required',
           'projectIcon'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
           'projectImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
-        //   'projectWrapper'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
           'projectText'        => 'required',
           'projectLocation'    => 'required',
           'projectCost'        => 'required|numeric',

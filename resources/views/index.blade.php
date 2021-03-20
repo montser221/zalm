@@ -60,6 +60,7 @@
                <?php
                $getAllDenoate = \DB::table('denoate_pay_details')
                                    ->where('projectTable',$project->projectId)
+                                   ->groupBy('projectTable')
                                    ->sum('moneyValue');
                                    // ->get();
                ?>
@@ -177,9 +178,9 @@
   <div class="container text-center">
     <div class="row">
     <div class="col-sm ">
-      <div class="back-vison" style="@if($aboutassociation->visonImage && !empty($aboutassociation->visonImage))background:url({{ url($aboutassociation->visonImage) }});  background-size: cover;background-repeat: no-repeat;width: 100%;max-height: 350px;;@endif">
+      <div class="back-vison" style="@if($aboutassociation->visonImage && !empty($aboutassociation->visonImage))background:url({{ url($aboutassociation->visonImage) }});  background-size: cover;background-repeat: no-repeat;@endif">
       <div class="  vison">
-        <img src="{{url("uploads/aboutassoiation/".$aboutassociation->visonIcon)}}" alt="">
+        <img src="{{url($aboutassociation->visonIcon)}}" alt="">
         <div class="vison-title">
           الرؤية
           <p class="vison-text">
@@ -191,9 +192,9 @@
     </div>
 
       <div class="col-sm ">
-      <div class="back-message"  style="@if(($aboutassociation->messageImage) && !empty($aboutassociation->messageImage))background:url({{ url($aboutassociation->messageImage) }});  background-size: cover;background-repeat: no-repeat;width: 100%;max-height: 350px;;@endif">
+      <div class="back-message"  style="@if(($aboutassociation->messageImage) && !empty($aboutassociation->messageImage))background:url({{ url($aboutassociation->messageImage) }});  background-size: cover;background-repeat: no-repeat;@endif">
       <div class="  message">
-        <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon)}}" alt="">
+        <img src="{{url($aboutassociation->messageIcon)}}" alt="">
         <div class="msg-title">
           الرسالة
           <p class="message-text">
@@ -291,6 +292,7 @@
             <?php
             $getAllDenoate = \DB::table('denoate_pay_details')
                                 ->where('projectTable',$project->projectId)
+                                ->groupBy('projectTable')
                                 ->sum('moneyValue');
             ?>
             @if($getAllDenoate >= $project->projectCost ) {{number_format( $project->projectCost ,0)}} @else  {{ number_format( $getAllDenoate ,0)}} @endif
@@ -317,12 +319,12 @@
             .our-projects .carousel .carousel-inner .item-1 .project-buttons button 
             {
                 border-radius: 30px !important;
-                color: #2fa89c;
+                color: var(--main-color);
                 background-color: #E6E6E6;
                 margin-bottom: 10px;
                 padding: 7px;
             	min-width: 256px;
-                border: 1px solid #2fa89c;
+                border: 1px solid var(--main-color);
             }
             ._add_ {
               border: none;
@@ -394,7 +396,7 @@
     </a>
 @endif
 @if ($show)
-<div class="text-center mt-5 ">
+<div class="text-center mt-2 ">
   <a href="{{route('ourproject')}}"><button class="btn btn-more">عرض المزيد </button></a>
 </div>
 @endif

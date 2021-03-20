@@ -125,13 +125,7 @@
 
                   </div>
 
-                  <div class="col">
-
-                    <label class="label-control" for="associationIcon"> الايقونة   </label>
-
-                    <input class="form-control-file" style="margin-right: 10%;" id="associationIcon" type="file" name="associationIcon" class="form-control w-80"  >
-
-                  </div>
+              
 
                 </div>
 
@@ -165,7 +159,7 @@
 
                    <input 
                    class="form-control-file" 
-                   style="margin-right: 10%;" 
+                  
                    id="messageImage" type="file" 
                    name="messageImage" 
                    class="form-control w-80"  >
@@ -180,7 +174,7 @@
 
                     <input 
                     class="form-control-file" 
-                    style="margin-right: 10%;" 
+                   
                     id="visonImage" type="file" 
                     name="visonImage" class="form-control w-80"  >
 
@@ -194,7 +188,7 @@
 
                     <label class="label-control mt-2" for="messageIcon">  ايقونة الرسالة </label>
 
-                   <input class="form-control-file" style="margin-right: 10%;" id="messageIcon" type="file" name="messageIcon" class="form-control w-80"  >
+                   <input class="form-control-file"  id="messageIcon" type="file" name="messageIcon" class="form-control w-80"  >
 
                   </div>
 
@@ -202,7 +196,7 @@
 
                     <label class="label-control mt-2" for="visonIcon"> ايقونة الرؤية   </label>
 
-                    <input class="form-control-file" style="margin-right: 10%;" id="visonIcon" type="file" name="visonIcon" class="form-control w-80"  >
+                    <input class="form-control-file"  id="visonIcon" type="file" name="visonIcon" class="form-control w-80"  >
 
                   </div>
 
@@ -213,7 +207,7 @@
                     <label class="label-control mt-2" for="facebook">    {{ __('aboutassosition.facebook') }} </label>
                    <input 
                       class="form-control" 
-                      style="margin-right: 10%;"
+                    
                       type="text" 
                       name="facebook" 
                       placeholder="https://www.exmple.com"
@@ -225,7 +219,7 @@
                     <label class="label-control mt-2" for="twitter">    {{ __('aboutassosition.twitter') }} </label>
                    <input 
                       class="form-control" 
-                      style="margin-right: 10%;"
+                  
                       type="text" 
                       name="twitter"
                       placeholder="https://www.exmple.com" 
@@ -237,7 +231,7 @@
                     <label class="label-control mt-2" for="instagram">    {{ __('aboutassosition.instagram') }} </label>
                    <input 
                       class="form-control" 
-                      style="margin-right: 10%;"
+                    
                       type="text" 
                       name="instagram" 
                       placeholder="https://www.exmple.com"
@@ -249,7 +243,7 @@
                     <label class="label-control mt-2" for="linkedin">    {{ __('aboutassosition.linkedin') }} </label>
                    <input 
                       class="form-control" 
-                      style="margin-right: 10%;"
+            
                       type="text" 
                       name="linkedin" 
                       placeholder="https://www.exmple.com"

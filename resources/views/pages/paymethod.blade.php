@@ -8,7 +8,7 @@
     <div class="pay-Inner">
      <div class="container">
        <div class="page-path">
-           <p><a href="{{route('home')}}"> الرئيسية </a>/ طرق التبرع </p>
+           <p><a href="{{route('/')}}"> الرئيسية </a>/ طرق التبرع </p>
        </div>
      </div>
    </div>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DenoatePayDetail;
-// use App\Models\PaymentMethod;
 use App\Exports\AllDenoate;
 use Maatwebsite\Excel\Facades\Excel;
 use Moyasar\Moyasar;
@@ -73,20 +72,7 @@ class DenoateController extends Controller
           'startDate'=>'required|date',
           'endDate'=>'required|date',
         ]);
-
-    // if($request->has('exportAllDenoate'))
-    // {
-    //   if($startDate==null OR $endDate == null )
-    //   {
-    //      return view('includes._sperror');
-    //   }
-    //   else
-    //   {
-
         return Excel::download(new AllDenoate($startDate , $endDate) , 'تفاصيل الدفع.xlsx');
-    //   }
-    // }
-
   }
 
   public function store(Request $request)

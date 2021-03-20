@@ -19,38 +19,17 @@ class MoneyReportController extends Controller
       ]);
     }
 
-
-
     public function exportToExcel(Request $request ,$id)
     {
       $startDate = $request->query('startDate');
       $endDate   = $request->query('endDate');
-      // $start = Carbon::parse($startDate);
-      // $end   = Carbon::parse($endDate);
-      // dd($start->month);
-      // dd($start->year);
 			$request->validate([
 				'startDate'=>'required|date',
 				'endDate'=>'required|date',
 			]);
-      // $reportName ="تقرير-شهر-$start->month-سنة-$start->year.xlsx";
-
-	    // if($request->has('export'))
-      // {
-      //   if($query==null)
-      //   {
-      //      return view('includes.sperror');
-      //   }
-      //   else
-      //   {
+      
           return Excel::download(new DenoateExample($id,$startDate,$endDate), 'ex.xlsx');
-      //   }
-      // }
-
-       // return $id;AllDenoate
     }
-
-
 
      public function dDetail($id)
     {

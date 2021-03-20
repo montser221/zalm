@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Projects;
 use App\Models\AboutAssociation;
@@ -12,8 +10,6 @@ use App\Models\pdfFile;
 use App\Models\Cart;
 use App\Models\video;
 use App\Models\Statistics; 
-use App\Models\Pages; 
-use App\Models\PagesViews; 
 use Session;
 use App\Models\Money;
 class MainController extends Controller
@@ -21,32 +17,6 @@ class MainController extends Controller
   public function index()
   {
       
-    /**
-     * visitorIp','pagesTable
-     */
-    $pageId   = 1;
-    $vistorIp = request()->ip();
-   $pageTotalViews = Pages::pageTotalViews($pageId);
-    // dd($pageTotalViews);
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
-
     $aboutassociation = AboutAssociation::find(1);
     $allprojects = Projects::with('arrow','denoate')->latest()->take(10)->where('projectStatus',1)->whereNotIn('projectCategoryId',[3])->get();
     $urgentprojects = Projects::with('arrow','denoate')->latest()->take(10)->where('projectStatus',1)->whereNotIn('projectCategoryId',[1])->get();
@@ -86,58 +56,15 @@ class MainController extends Controller
     return redirect()->route('home');
   }
   
-  public function cart()   {
-    $pageId   = 5;
-    $vistorIp = request()->ip();
-   $pageTotalViews = Pages::pageTotalViews($pageId);
-    // dd($pageTotalViews);
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::Create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
+  public function cart()  
+  {
       return view('pages.cart');
-    }
+  }
 
 
   // Our projects page
   public function ourproject()
   {
-    $pageId   = 8;
-    $vistorIp = request()->ip();
-   $pageTotalViews = Pages::pageTotalViews($pageId);
-    // dd($pageTotalViews);
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::Create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
     $allprojects = Projects::latest()->where('projectStatus',1)->paginate(9);
     return view('pages.ourproject')->with([
       'allprojects'=>$allprojects,
@@ -155,28 +82,6 @@ class MainController extends Controller
   //our zakat page
   public function zakat()
   {
-    $pageId   = 10;
-    $vistorIp = request()->ip();
-   $pageTotalViews = Pages::pageTotalViews($pageId);
-    // dd($pageTotalViews);
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::Create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
     return view('pages.zakat');
   }
 }

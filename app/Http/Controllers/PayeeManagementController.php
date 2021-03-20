@@ -31,20 +31,6 @@ class PayeeManagementController extends Controller
     // // create project instance
     $payees = new PayeeManagement;
 
-    // if($request->file('pImage')){
-    //
-    //     $image_name = time() . rand(1,1000000000000) . date('Y');
-    //     $image_ext = $request->file('pImage')->getClientOriginalExtension(); // example: png, jpg ... etc
-    //     $image_full_name = $image_name . '.' . $image_ext;
-    //
-    //     $uploads_folder =  getcwd() .'/uploads/payees/';
-    //     if (!file_exists($uploads_folder)) {
-    //         mkdir($uploads_folder, 0777, true);
-    //     }
-    //     $request->file('pImage')->move($uploads_folder,    $image_full_name);
-    //     $payees->pImage=$image_full_name;
-    // }
-
     if ($request->has('pStatus')) {
       $payees->pStatus   = $request->input('pStatus');
     }
@@ -78,24 +64,6 @@ class PayeeManagementController extends Controller
    */
   public function update(Request $request, $id)
   {
-
-    // if($request->file('pImage'))
-    // {
-    //     $image_name = time() . rand(1,1000000000000);
-    //     $image_ext = $request->file('pImage')->getClientOriginalExtension(); // example: png, jpg ... etc
-    //     $image_full_name = $image_name . '.' . $image_ext;
-    //
-    //     $uploads_folder =  getcwd() .'/uploads/payees';
-    //     if (!file_exists($uploads_folder)) {
-    //         mkdir($uploads_folder, 0777, true);
-    //     }
-    //     $request->file('pImage')->move($uploads_folder,    $image_full_name);
-    //     \DB::table('payees')
-    //     ->where('pId',$id)
-    //     ->update([
-    //       'pImage'=>$image_full_name,
-    //     ]);
-    // }
 
     if ($request->has('pStatus'))
     {

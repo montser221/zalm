@@ -8,7 +8,7 @@
   <div class="container-fluid px-0 banner" id="basket-banner">
              <div class="container">
                  <div class="page-path">
-                     <p><a href="{{route('home')}}"> الرئيسية </a>/ السلة </p>
+                     <p><a href="{{route('/')}}"> الرئيسية </a>/ السلة </p>
                  </div>
              </div>
          </div>

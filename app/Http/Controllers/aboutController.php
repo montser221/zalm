@@ -9,36 +9,14 @@ use App\Models\Services;
 use App\Models\Member;
 use App\Models\Attendace;
 use App\Models\Settings;
-use App\Models\Pages;
-use App\Models\PagesViews;
+
 
 class aboutController extends Controller
 {
 
     public function aboutus()
     {
-      $pageId   = 2;
-    $vistorIp = request()->ip();
-   $pageTotalViews = Pages::pageTotalViews($pageId);
-    // dd($pageTotalViews);
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::Create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
+     
       $goals = OurGoals::all()->where('goalStatus',1);
       $members = Member::all()->where('memberStatus',1);
       $attendce = Attendace::all()->where('attendaceStatus',1);

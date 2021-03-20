@@ -58,29 +58,23 @@
 
         </div>
 
-        <div class="form-row">
+        <div class="form-row mt-3">
 
           <div class="col">
 
             <label class="label-control" for="managerWord"> كلمة الرئيس   </label>
 
-          <textarea class="form-control" name="managerWord" rows="4" cols="40"> {{$data->managerWord ?? ''}}</textarea>
+          <textarea class="form-control" name="managerWord" rows="6" cols="60"> {{$data->managerWord ?? ''}}</textarea>
 
           </div>
 
-          <div class="col">
-
-            <label class="label-control" for="associationIcon"> الايقونة   </label>
-
-            <input class="form-control-file"   id="associationIcon" type="file" name="associationIcon" class="form-control w-80"  >
-
-          </div>
+      
 
         </div>
 
 
 
-        <div class="form-row">
+        <div class="form-row  mt-3">
 
           <div class="col">
 
@@ -105,7 +99,7 @@
           </div>
 
         </div>
-<div class="form-row">
+<div class="form-row  mt-3">
 
                   <div class="col">
 
@@ -115,7 +109,7 @@
 
                    <input 
                    class="form-control-file" 
-                   style="margin-right: 10%;" 
+                  
                    id="messageImage" type="file" 
                    name="messageImage" 
                    class="form-control w-80"  >
@@ -130,14 +124,14 @@
 
                     <input 
                     class="form-control-file" 
-                    style="margin-right: 10%;" 
+                  
                     id="visonImage" type="file" 
                     name="visonImage" class="form-control w-80"  >
 
                   </div>
 
                 </div>
-        <div class="form-row">
+        <div class="form-row  mt-3">
           <div class="col">
             <label class="label-control mt-2" for="messageIcon">  ايقونة الرسالة </label>
            <input class="form-control-file"   id="messageIcon" type="file" name="messageIcon" class="form-control w-80"  >
@@ -153,7 +147,7 @@
             <label class="label-control mt-2" for="facebook">    {{ __('aboutassosition.facebook') }} </label>
             <input 
               class="form-control" 
-              style="margin-right: 10%;"
+              
               type="text" 
               name="facebook" 
               class="form-control w-80" 
@@ -161,12 +155,12 @@
                >
           </div>
         </div>
-        <div class="form-row">
+        <div class="form-row  mt-3">
             <div class="col">
             <label class="label-control mt-2" for="twitter">    {{ __('aboutassosition.twitter') }} </label>
             <input 
               class="form-control" 
-              style="margin-right: 10%;"
+      
               type="text" 
               name="twitter" 
               class="form-control w-80" 
@@ -174,12 +168,12 @@
                >
           </div>
         </div>
-        <div class="form-row">
+        <div class="form-row  mt-3">
             <div class="col">
             <label class="label-control mt-2" for="instagram">    {{ __('aboutassosition.instagram') }} </label>
             <input 
               class="form-control" 
-              style="margin-right: 10%;"
+          
               type="text" 
               name="instagram" 
               class="form-control w-80" 
@@ -187,12 +181,12 @@
                >
           </div>
         </div>
-        <div class="form-row">
+        <div class="form-row  mt-3">
             <div class="col">
             <label class="label-control mt-2" for="linkedin">    {{ __('aboutassosition.linkedin') }} </label>
             <input 
               class="form-control" 
-              style="margin-right: 10%;"
+              
               type="text" 
               name="linkedin" 
               class="form-control w-80"  

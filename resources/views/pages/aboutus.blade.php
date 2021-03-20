@@ -22,7 +22,7 @@
 
        <div class="page-path">
 
-           <p><a href="{{route('home')}}"> الرئيسية </a> /  من نحن </p>
+           <p><a href="{{route('/')}}"> الرئيسية </a> /  من نحن </p>
 
            <div class="h2" style="padding-bottom: 100px !important;">
 
@@ -136,15 +136,15 @@
 
     <div class="col-sm-12 col-md-5 mb-5">
 
-      <div class="back-vison">
+      <div class="back-vison" style="@if($aboutassociation->visonImage && !empty($aboutassociation->visonImage))background:url({{ url($aboutassociation->visonImage) }});  background-size: cover;background-repeat: no-repeat;width: 100%;max-height: 308px;;@endif" >
 
-      <div class="  vison">
+      <div class="  vison vsn">
 
         @isset($aboutassociation)
 
 
 
-        <img src="{{ url("uploads/aboutassoiation/".$aboutassociation->visonIcon ) ?? ''}}" alt="">
+        <img src="{{ url($aboutassociation->visonIcon ) ?? ''}}" alt="">
 
       @endisset
 
@@ -176,13 +176,13 @@
 
       <div class="col-sm-12 col-md-5 mb-5">
 
-      <div class="back-message">
+      <div class="back-message "  style="@if(($aboutassociation->messageImage) && !empty($aboutassociation->messageImage))background:url({{ url($aboutassociation->messageImage) }});  background-size: cover;background-repeat: no-repeat;width: 100%;max-height: 308px;;@endif">
 
-      <div class="  message">
+      <div class="  message msg">
 
         @isset($aboutassociation)
 
-        <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon ?? '')}}" alt="">
+        <img src="{{url($aboutassociation->messageIcon ?? '')}}" alt="">
 
       @endisset
 
@@ -204,8 +204,6 @@
 
   </div>
 
-
-
     </div>
 
   </div>
@@ -213,12 +211,6 @@
 </div>
 
 <!-- End message And Vison -->
-
-
-
-
-
-
 
 <!-- Start Our Services -->
 

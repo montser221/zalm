@@ -10,7 +10,7 @@
     <div class="z-inner">
      <div class="container">
        <div class="page-path">
-           <p><a href="{{route('home')}}"> الرئيسية / </a> حساب الزكاة   </p>
+           <p><a href="{{route('/')}}"> الرئيسية / </a> حساب الزكاة   </p>
            <div class="h2" style="padding-bottom: 100px !important;">
             أداة حساب الزكاة
            </div>

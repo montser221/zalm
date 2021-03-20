@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Agent;
-use Intervention\Image\Facades\Image;
+// use Intervention\Image\Facades\Image;
 class AgentsController extends Controller
 {
   /*

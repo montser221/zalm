@@ -134,9 +134,6 @@ $otherFiles = \App\Models\OtherMember::all();
                الخدمات الالكترونية
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkSer">
-                  <a class="dropdown-item" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RUOFFDVzYxRlc0UEJRTDlNWTVTRDQzUDE2WC4u">   طلب عضو منتسب </a>
-                  <a class="dropdown-item" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RURjJWR1k1TUNKVVo4SFMzRlFOWVBaNjJZSC4u"> طلب عضو عامل   </a>
-                  <a class="dropdown-item" target="_blank" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RUODY0U05IMExGSFdXR0I0MVZNTUVVOFA3NC4u">  تقييم رضا المستفيدين والعملاء  </a>
                   <a class="dropdown-item" href="{{route("voluntary.index")}}"> بوابة المتطوعين</a>
                   <a class="dropdown-item" href="{{route('benfit.index')}}"> تسجيل مستفيد</a>
                   <a class="dropdown-item" href="{{route('dulni.index')}}">دلني على محتاج</a>

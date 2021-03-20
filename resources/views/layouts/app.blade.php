@@ -24,8 +24,6 @@
     <!-- <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}"> -->
     <link rel="stylesheet" href="{{url('css/bootstrap-rtl.min.css')}}">
     <link rel="stylesheet" href="{{ url('css/font-awesome.css') }}" >
-  <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ url('css/owl.theme.default.min.css') }}">
   <link rel="stylesheet" href="{{ url('css/style.css') }}" >
 
     <title>@yield('title','title')</title>
@@ -39,21 +37,11 @@
 
     </div>
 
-
-
     <div >
-
-
 
         @yield('content')
 
- 
-
     </div>
-
-
-
-
 
     <div>
 
@@ -67,7 +55,6 @@
     <script src="{{url('js/jquery.min.js')}}"></script>
     <script src="{{url('js/popper.min.js')}}"></script>
     <script src="{{url("js/bootstrap.bundle.min.js")}}"></script>
-    <script src="{{url("js/owl.carousel.min.js")}}"></script>
     <script src="{{url("js/main.js")}}"></script>
     
     {{-- <!-- <script src="{{url("js/jquery.animateNumber.min.js") }}"></script> --> --}}

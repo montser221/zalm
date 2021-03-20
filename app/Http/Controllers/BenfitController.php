@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payee;
-use App\Models\Pages;
-use App\Models\PagesViews;
-
 class BenfitController extends Controller
 {
   /**
@@ -16,33 +13,6 @@ class BenfitController extends Controller
    */
   public function index()
   {
-    $pageId   = 9;
-    $vistorIp = request()->ip();
-    $pageTotalViews = Pages::pageTotalViews($pageId);
-    $total;
-   foreach($pageTotalViews as $to)
-   {
-     $total= $to->totalViews;
-   }
-
-    if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-    {
-      PagesViews::Create([
-        'pagesTable'=>$pageId,
-        'visitorIp'=>$vistorIp,
-      ]);
-      \DB::table('pages')
-        ->where('pageId',$pageId)
-        ->update([
-          'totalViews'=> $total + 1,
-          'updated_at'=>now(),
-        ]);
-    
-    }
-    else
-    {
-      // dd('bad');
-    }
       return view('pages.benfit');
   }
 

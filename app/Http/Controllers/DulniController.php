@@ -4,34 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dulni;
-use App\Models\Pages;
-use App\Models\PagesViews;
 class DulniController extends Controller
 {
     public function index()
     {
-      $pageId   = 3;
-      $vistorIp = request()->ip();
-     $pageTotalViews = Pages::pageTotalViews($pageId);
-      // dd($pageTotalViews);
-      if(PagesViews::is_unique_view($vistorIp,$pageId) === true)
-      {
-        PagesViews::Create([
-          'pagesTable'=>$pageId,
-          'visitorIp'=>$vistorIp,
-        ]);
-        \DB::table('pages')
-          ->where('pageId',$pageId)
-          ->update([
-            'totalViews'=> 1,
-            'updated_at'=>now(),
-          ]);
-      
-      }
-      else
-      {
-        // dd('bad');
-      }
         return view('pages.dulni');
     }
 
