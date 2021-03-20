@@ -336,8 +336,6 @@
 
           <th>  العنوان</th>
 
-          <th>  الايقونة   </th>
-
           <th>  ايقونة الرؤية   </th>
 
           <th>  إيقونة الرسالة   </th>
@@ -362,11 +360,9 @@
 
               <td>{{  $about->associationTitle }}</td>
 
-              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->associationIcon )}}" alt="" /></td>
+              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url($about->visonIcon )}}" alt="" /></td>
 
-              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->visonIcon )}}" alt="" /></td>
-
-              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->messageIcon )}}" alt="" /></td>
+              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url($about->messageIcon )}}" alt="" /></td>
 
               <td>{{  $about->managerName }}</td>
 

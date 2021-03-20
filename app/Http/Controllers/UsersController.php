@@ -32,7 +32,6 @@ class UsersController extends Controller
           'fullName'         => 'required|max:255',
           'userCategoryIdTable'   => 'required|numeric',
           'password'         => 'required',
-          // 'confirmPassword'  => 'confirmed:password',
           'email'            => 'required|unique:users',
           'phone'            => 'required',
           'profileImage'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',

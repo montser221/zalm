@@ -60,8 +60,8 @@ class MembersController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('memberImage')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/members/{$image_full_name}"))->fit(1200,1200);
-        $image->save();
+        // $image = Image::make( public_path("uploads/members/{$image_full_name}"))->fit(1200,1200);
+        // $image->save();
         $member->memberImage=$image_full_name;
     }
 
@@ -133,8 +133,8 @@ class MembersController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('memberImage')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/members/{$image_full_name}"))->fit(1200,1200);
-        $image->save();
+        // $image = Image::make( public_path("uploads/members/{$image_full_name}"))->fit(1200,1200);
+        // $image->save();
         \DB::table('members')
         ->where('memberId',$id)
         ->update([

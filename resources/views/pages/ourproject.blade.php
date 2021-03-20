@@ -209,8 +209,9 @@
             <?php
             $getAllDenoate = \DB::table('denoate_pay_details')
                                 ->where('projectTable',$project->projectId)
+                                ->groupBy('projectTable')
                                 ->sum('moneyValue');
-                                // ->get();
+                            
             //echo( number_format($getAllDenoate,0));
             ?>
             @if($getAllDenoate >= $project->projectCost ) {{number_format( $project->projectCost ,0)}} @else  {{ number_format( $getAllDenoate ,0)}} @endif

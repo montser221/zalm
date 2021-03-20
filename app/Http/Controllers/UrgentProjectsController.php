@@ -65,8 +65,8 @@ class UrgentProjectsController extends Controller
           }
         
           $request->file('projectIcon')->move($uploads_folder,$image_full_name);
-          $image = Image::make( $uploads_folder . $image_full_name )->fit(1200,1200);
-          $image->save();
+          // $image = Image::make( $uploads_folder . $image_full_name )->fit(1200,1200);
+          // $image->save();
           $project->projectIcon=$image_full_name;
       }
       // upload project image and store it in database
@@ -81,8 +81,8 @@ class UrgentProjectsController extends Controller
           }
    
           $request->file('projectImage')->move($uploads_folder,$image_full_name);
-          $image = Image::make( $uploads_folder .$image_full_name)->fit(1700,700);
-          $image->save();
+          // $image = Image::make( $uploads_folder .$image_full_name)->fit(1700,700);
+          // $image->save();
        
 
           $project->projectImage=$image_full_name;
@@ -166,8 +166,8 @@ class UrgentProjectsController extends Controller
               mkdir($uploads_folder, 0777, true);
           }
           $request->file('projectIcon')->move($uploads_folder,$image_full_name);
-          $image = Image::make( $uploads_folder . $image_full_name)->fit(1200,1200);
-          $image->save();
+          // $image = Image::make( $uploads_folder . $image_full_name)->fit(1200,1200);
+          // $image->save();
           \DB::table('projects')
           ->where('projectId',$id)
           ->update([
@@ -185,8 +185,8 @@ class UrgentProjectsController extends Controller
               mkdir($uploads_folder, 0777, true);
           }
           $request->file('projectImage')->move($uploads_folder,$image_full_name);
-          $image = Image::make( $uploads_folder . $image_full_name )->fit(1700,700);
-          $image->save();
+          // $image = Image::make( $uploads_folder . $image_full_name )->fit(1700,700);
+          // $image->save();
           \DB::table('projects')
           ->where('projectId',$id)
           ->update([
@@ -206,7 +206,6 @@ class UrgentProjectsController extends Controller
       ]);
 
       return redirect()->route('urgentprojects.index')->with('success','تم تحديث المشروع بنجاح ');
-          // return $request->all();
     }
 
 
@@ -226,11 +225,8 @@ class UrgentProjectsController extends Controller
      */
     public function destroy($id)
     {
-      // $filename = projects::find($id);
       // delete project by id
       if(intval($id)){
-        // unlink(url('uploads/'.$filename->projectIcon));
-        // unlink(url('uploads/'.$filename->projectImage));
         \DB::table('projects')
         ->where('projectId',$id)
         ->delete();

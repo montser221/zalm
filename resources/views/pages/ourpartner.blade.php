@@ -28,7 +28,7 @@
         @foreach ($agent as $agen)
 
         <div class="d-flex">
-          <img class="partner-image" src="{{ url("uploads/agents/".$agen->agentImage) }}" alt="1" />
+          <img class="partner-image" src="{{ url("uploads/agents/".$agen->agentImage) }}" alt="{{ $agen->agentName }}" />
           </div>
       @endforeach
 
