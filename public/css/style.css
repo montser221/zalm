@@ -3179,7 +3179,7 @@ margin-left: calc(63% - 50%)
 
 ._panel .project-name {
 
-    font-size: 13px !important;
+    font-size: 16px !important;
 
     color: var(--main-color);
 
@@ -3848,17 +3848,12 @@ font-size: .8rem !important;
 
 ._panel .project-name span {
 
-    font-size: 13px;
-
-    margin-right: 0 !important;
-
-    position: absolute;
-
-    top: -20px;
-
-    right: 0px;
-
-    display: block;
+	font-size: 13px;
+	margin-right: 0 !important;
+	position: absolute;
+	top: -35px;
+	right: -2px;
+	display: block;
 
 }
 
