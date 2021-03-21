@@ -135,7 +135,7 @@
 <section class="about-association">
   <div class="container">
     <hr>
-      <p style="padding-bottom: 32px;">مرحبا بك في جمعية البر الخيرية بمحافظة المويه! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المشاريع</a> الخيرية للقيام بالتبرع  </span></p>
+      <p style="padding-bottom: 32px;">مرحبا بك في جمعية البر الخيرية  بظلم! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المشاريع</a> الخيرية للقيام بالتبرع  </span></p>
     <hr>
 </div>
 </section>
@@ -642,9 +642,7 @@
 
 
 <!-- End Our Services -->
-
-<!-- Start our achieving -->
- 
+ <!-- Start our achieving -->
 <?php $a_view_at_home=0 ?>
       @foreach($statistics as $stat)
        @if($stat->sStatus==1)
@@ -653,46 +651,30 @@
       @endforeach
 @if($a_view_at_home==1)
 <div class="our-achieving">
-
   <div class="inner">
-
   <div class="container">
-
-    <div class="h2 text-center mt-4" style="padding-top:30px">
-
+    <div class="h2 text-center mt-4" style="padding-top:30px;">
       بفضل الله ثم بفضلكم وصل عدد انجازنا
-
     </div>
-
     <div class="row mt-4">
-
+      <?php $ani = -1 ?>
       @foreach($statistics as $stat)
+      <?php $ani++?>
+
        @if($stat->sStatus==1)
       <div class="col-sm-3 small-phone">
-
-        <div class="item-1">
-
-          <span class="animate">+   {{$stat->sValue}}</span>
-
+        <div class="item-1 ani"  >
+         <i class="fa fa-plus plus-sign" aria-hidden="true"></i> <span class="animate-{{$ani}}"> {{$stat->sValue}}</span>
         </div>
-
         <div class="achieve-text  text-center   "   >
-
            {{$stat->sName}}
-
         </div>
-
       </div>
       @endif
       @endforeach
-   
-
     </div>
-
   </div>
-
  </div>
-
 </div>
 @endif
 <!-- End our achieving -->

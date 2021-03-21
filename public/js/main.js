@@ -1,3 +1,42 @@
+function animateValue(id, start, end, duration) {
+  if (start === end) return;
+  var range = end - start;
+  var current = start;
+  var increment = end > start? 1 : -1;
+  var stepTime = Math.abs(Math.floor(duration / range));
+  var obj = document.querySelector(id);
+  var timer = setInterval(function() {
+      current += increment;
+      obj.innerHTML = current;
+      if (current == end) {
+          clearInterval(timer);
+      }
+  }, stepTime);
+}
+var animationElements = [];
+$('.ani').each(function(par){
+animationElements.push($(this).children().text());
+});
+if(window.scrollY == 3782){
+// console.log(`scrollY = ${this.scrollY} `);
+
+}
+
+$(document).on('scroll',function(){
+// console.log($(document).scrollTop());
+if ($(document).scrollTop() > 500 && $(document).scrollTop() < 600) {
+  // console.log($(document).scrollTop() );
+  for(i=0;i<animationElements.length; i++)
+  {
+    animateValue('.animate-'+i+'',1,animationElements[i],6000)
+  }
+}
+else
+{
+
+}
+});
+ 
  $(function(){
    
    let allProjects = $('#allProjects');
