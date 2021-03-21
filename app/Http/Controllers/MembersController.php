@@ -14,7 +14,7 @@ class MembersController extends Controller
    */
   public function index()
   {
-    $allmembers = Member::all();
+    $allmembers = Member::latest()->paginate(9);
     return view('dashboard.members.index')->with(['allmembers'=>$allmembers]);
   }
 
@@ -124,6 +124,7 @@ class MembersController extends Controller
       // upload project wrapper and store it in database
     if($request->file('memberImage'))
     {
+      \Storage::delete(Member::find($id)->memberImage);
         $image_name = time() . rand(1,1000000000000);
         $image_ext = $request->file('memberImage')->getClientOriginalExtension(); // example: png, jpg ... etc
         $image_full_name = $image_name . '.' . $image_ext;
@@ -180,6 +181,7 @@ class MembersController extends Controller
   {
     // delete project by id
     if(intval($id)){
+      \Storage::delete("uploads/members/".Member::find($id)->memberImage);
       \DB::table('members')
       ->where('memberId',$id)
       ->delete();

@@ -28,7 +28,7 @@ if ($(document).scrollTop() > 500 && $(document).scrollTop() < 600) {
   // console.log($(document).scrollTop() );
   for(i=0;i<animationElements.length; i++)
   {
-    animateValue('.animate-'+i+'',1,animationElements[i],6000)
+    animateValue('.animate-'+i+'',1,animationElements[i],5000)
   }
 }
 else

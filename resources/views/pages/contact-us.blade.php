@@ -10,7 +10,7 @@
     <div class="pay-Inner">
      <div class="container">
        <div class="page-path">
-           <p><a href="{{route('/')}}"> الرئيسية </a> تواصل معنا   </p>
+           <p><a href="{{route('/')}}"> الرئيسية / </a> تواصل معنا   </p>
            <div class="h2" style="padding-bottom: 100px !important;">
              الاتصال بالمؤسسة
            </div>

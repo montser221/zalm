@@ -144,7 +144,7 @@
 
 
 
-        <img src="{{ url($aboutassociation->visonIcon ) ?? ''}}" alt="">
+        <img class="thambonail"  src="{{ url($aboutassociation->visonIcon ) ?? ''}}" alt="">
 
       @endisset
 
@@ -182,7 +182,7 @@
 
         @isset($aboutassociation)
 
-        <img src="{{url($aboutassociation->messageIcon ?? '')}}" alt="">
+        <img class="thambonail"  src="{{url($aboutassociation->messageIcon ?? '')}}" alt="">
 
       @endisset
 
@@ -381,7 +381,7 @@
         <div class="contact mt-3 d-inline-flex">
         
         @if ($member->memberEmail !="")
-            <a class="ml-3" target="_blank" href="https://wa.me/{{$member->memberPhone ?? ''}}&text">
+            <a class="ml-3" target="_blank" href="https://wa.me/{{$member->memberPhone ?? ''}}">
            <img style="width: 50px;" src="{{url('design/icons/whatsapp.png')}}" />
           </a>
         @endif

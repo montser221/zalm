@@ -180,7 +180,7 @@
     <div class="col-sm ">
       <div class="back-vison" style="@if($aboutassociation->visonImage && !empty($aboutassociation->visonImage))background:url({{ url($aboutassociation->visonImage) }});  background-size: cover;background-repeat: no-repeat;@endif">
       <div class="  vison">
-        <img src="{{url($aboutassociation->visonIcon)}}" alt="">
+        <img class="thambonail" src="{{url($aboutassociation->visonIcon)}}" alt="">
         <div class="vison-title">
           الرؤية
           <p class="vison-text">
@@ -194,7 +194,7 @@
       <div class="col-sm ">
       <div class="back-message"  style="@if(($aboutassociation->messageImage) && !empty($aboutassociation->messageImage))background:url({{ url($aboutassociation->messageImage) }});  background-size: cover;background-repeat: no-repeat;@endif">
       <div class="  message">
-        <img src="{{url($aboutassociation->messageIcon)}}" alt="">
+        <img class="thambonail"  src="{{url($aboutassociation->messageIcon)}}" alt="">
         <div class="msg-title">
           الرسالة
           <p class="message-text">
