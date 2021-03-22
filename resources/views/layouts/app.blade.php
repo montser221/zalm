@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="{{ url('css/font-awesome.css') }}" >
   <link rel="stylesheet" href="{{ url('css/style.css') }}" >
 
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Cairo">
+
     <title>@yield('title','title')</title>
   </head>
 

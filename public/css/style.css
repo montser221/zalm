@@ -3,17 +3,7 @@
 	--secondry-color:#FFCA25;
 	--primary-color:#6b7274;
 }
-@font-face
-{	
-	font-family: 'ArbFONTS-BR';
-	src: url('../fonts/ArbFONTS-4_F4.ttf');
-	src: url('../fonts/ArbFONTS-4_F5.ttf');
-	src: url('../fonts/ArbFONTS-BR.ttf');
-	src: url('../fonts/ArbFONTS-riyad-bank-Bold.ttf');
-	src: url('../fonts/ArbFONTS-riyad-bank-Regular.ttf');
-	font-family: 'ArbFONTS-BR';
-	/* src: url('../fonts/Frutiger\ LT\ Arabic\ 55\ Roman.ttf'); */ */
-}
+
 .showCase {display: block !important;}
 .hideCase {display: none !important;}
 input:focus {outline: none !important; }
@@ -29,7 +19,7 @@ input:focus {outline: none !important; }
 .navbar-expand-lg .navbar-nav .nav-link,
 .dropdown-item
 {
-	font-size: 16px;
+	font-size: 15px;
 }
 .thambonail {width: 50px;max-width: 50px;}
 a.dropdown-item:hover{
@@ -56,9 +46,11 @@ a:hover{color: #ccc;}
 	text-align: right;
 	direction: rtl;
 }
+ 
 body
 {
-    font-family: 'Frutiger LT Arabic';
+	font-family: Cairo !important;
+	font-size: 16px;
 }
 /* start header */
 #header-top {
@@ -1257,7 +1249,7 @@ color: #20c997}
 {
 	max-width: 175px;
 	max-height: 175px;
-	border-radius: 50%;
+	/* border-radius: 50%; */
 }
 .our-partner  .carousel-item.active {
 	display: flex;

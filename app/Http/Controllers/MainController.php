@@ -53,7 +53,7 @@ class MainController extends Controller
     $request->session()->put('cart',$cart);
     // dd(session()->get('cart'));
   
-    return redirect()->route('home');
+    return redirect()->route('/');
   }
   
   public function cart()  

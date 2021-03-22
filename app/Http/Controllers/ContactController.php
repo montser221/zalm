@@ -83,7 +83,7 @@ class ContactController extends Controller
     $contact->message   = $request->input('msg');
  
     $contact->save();
-    return redirect()->route('home')->with('success',' تم ارسال رسالتكم بنجاح شكرا لكم');
+    return redirect()->route('/')->with('success',' تم ارسال رسالتكم بنجاح شكرا لكم');
   }
 
   public function destroy($id)
