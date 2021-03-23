@@ -28,7 +28,7 @@
 
       {{-- @if ($project->projectStatus==1) --}}
 
-       <img style="margin-bottom: 170px !important;" src="{{ url("uploads/".$project->projectImage)}}" class="d-block w-100" alt="...">
+       <img style="margin-bottom: 120px !important;max-height:550px" src="{{ url("uploads/".$project->projectImage)}}" class="d-block w-100" alt="...">
 
        <div class="container">
 

@@ -67,10 +67,15 @@
 
 
       {{--start sidebar --}}
-
-      <div class="col-sm-3" style="background-color: #FFF;">
-
-        <div class="list-group" >
+      {{-- <div class="container-fluid">
+        <button id="btnToggle" class="bars">
+           <span class="bar"></span>
+           <span class="bar"></span>
+           <span class="bar"></span>
+        </button>
+      </div> --}}
+      <div class="col-sm-3 open" id="dashboard-sidebar" style="background-color: #FFF;">
+        <div class="list-group " >
 
           <a class="list-group-item active" href="{{route('statistics.index')}}"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; لوحة التحكم</a>
 

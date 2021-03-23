@@ -88,8 +88,8 @@ class ProjectsController extends Controller
           }
    
           $request->file('projectImage')->move($uploads_folder,$image_full_name);
-          // $image = Image::make( $uploads_folder .$image_full_name)->fit(1700,700);
-          // $image->save();
+          $image = Image::make(($uploads_folder .$image_full_name))->fit(1366,720);
+          $image->save();
        
 
           $project->projectImage=$image_full_name;
@@ -191,8 +191,8 @@ class ProjectsController extends Controller
               mkdir($uploads_folder, 0777, true);
           }
           $request->file('projectImage')->move($uploads_folder,$image_full_name);
-          // $image = Image::make( $uploads_folder . $image_full_name )->fit(1700,700);
-          // $image->save();
+          $image = Image::make( ($uploads_folder . $image_full_name) )->fit(1366,720);
+          $image->save();
           \DB::table('projects')
           ->where('projectId',$id)
           ->update([
