@@ -3,7 +3,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 // Route::pattern('');
 Route::get('artisan',function(){
-    return 'artisan';
+    $img = \App\Models\ImageManagement::find(16);
+    return \Storage::disk('public')->url($img->imageFile);
 })->name('artsan');
 Route::get('viewFile',[App\Http\Controllers\ViewFileController::class,'viewFile'])->name('viewFile');
 Route::get('exportNeedy',function(){

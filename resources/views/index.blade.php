@@ -709,24 +709,15 @@
 
           <ol class="carousel-indicators">
 
-            <?php //$x=-1; ?>
 
-            {{-- @foreach ($images as $img)
-
-              <?php //$x++; ?>
-              @if($x < 6)
-            <li data-target="#carouselImage" data-slide-to="{{$x}}" class="<?php echo $x==0?'active':'' ?>" style="background-image:url(<?php echo  url("uploads/images/".$img->imageFile); ?>);
-
-              background-repeat: no-repeat;background-size: cover;"></li>
-              @else
-
-              @endif
-            @endforeach --}}
              <?php $imagecout=-1; ?>
             @foreach ($images as $img)
               <?php $imagecout++; ?>
               @if($imagecout < 5)
-            <li data-target="#carouselImage" data-slide-to="{{$imagecout}}" class="<?php echo $imagecout==0?'active':'' ?>" style="background-image:url(<?php echo  url("storage/".$img->imageFile); ?>);
+            <li data-target="#carouselImage"
+             data-slide-to="{{$imagecout}}"
+              class="<?php echo $imagecout==0?'active':'' ?>" 
+              style="background-image:url(<?php echo url($img->imageFile); ?>);
               background-repeat: no-repeat;background-size: cover;"></li>
               @else
               @endif
@@ -746,7 +737,7 @@
 
                 <div class="carousel-item <?php echo $z==1 ? "active" :''  ?>" id="first-slide">
 
-                  <img class="gallery-img"  src="<?php echo  url("storage/".$img->imageFile) ?>" class="d-block image"  alt="{{ $img->imageTitle }}">
+                  <img class="gallery-img"  src="<?php echo \Storage::disk('public')->url($img->imageFile) ?>" class="d-block image"  alt="{{ $img->imageTitle }}">
 
                 </div>
 

@@ -43,7 +43,7 @@ class ProjectsController extends Controller
        
           'projectName'        => 'required|unique:projects|max:255',
           'projectDesc'        => 'required',
-          'projectIcon'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+          'projectIcon'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
           'projectImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
           'projectText'        => 'required',
           'projectLocation'    => 'required',
@@ -191,7 +191,7 @@ class ProjectsController extends Controller
               mkdir($uploads_folder, 0777, true);
           }
           $request->file('projectImage')->move($uploads_folder,$image_full_name);
-          $image = Image::make( ($uploads_folder . $image_full_name) )->fit(1366,720);
+          $image = Image::make( ($uploads_folder . $image_full_name) )->fit(1366,800);
           $image->save();
           \DB::table('projects')
           ->where('projectId',$id)
